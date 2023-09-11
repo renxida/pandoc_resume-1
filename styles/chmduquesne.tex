@@ -30,9 +30,9 @@ $endif$
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[11pt, helvetica]
-
-\setupwhitespace[medium]
+\setupbodyfont[10pt, calibri]
+\setupinterlinespace[line=10pt] % Adjust this value to change the line spacing
+\setupwhitespace[0.5mm] % Adjust this value to change the inter-paragraph spacing
 
 \setupblackrules[width=31mm, color=rulecolor]
 
@@ -52,7 +52,7 @@ $endif$
 \definedescription
   [description]
   [headstyle=bold, style=normal,
-   location=hanging, width=18mm, distance=14mm, margin=0cm]
+   location=hanging, width=15mm, distance=10mm, margin=0cm]
 
 \setupitemize[autointro, packed]    % prevent orphan list intro
 \setupitemize[indentnext=no]
