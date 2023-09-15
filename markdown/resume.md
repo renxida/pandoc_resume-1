@@ -34,7 +34,7 @@ Skills
 Experience
 ----------
 
-**2023: Low-Latency Etherium Data Company (Stealth)**
+**2023: MevLink (Informal Consulting)**
 
 * Cut version interval by half by consulting with team to implement test-driven development and agile practices
 * Improved company's key competitive advantage as measured by Etherium data latency by mastering Ziglang from scratch to optimizing a 70,000 LoC codebase within a week.
@@ -42,12 +42,14 @@ Experience
 
 **Aug 2022-Jan 2023: Intel Labs**
 
-* Sped up new-workload bechmarking 200x by sampling CPU performance counters to generate [SimPoints](https://cseweb.ucsd.edu/~calder/simpoint/simpoint_overview.htm).
-* Achieved <3% CPI and <10% MPKI error while speeding up benchmarking by 10^6x using SimPoints
+* Achieved <3% CPI and <10% MPKI error while speeding up benchmarking by 10^6x using SimPoints, measured over SPEC 2017 x86 workloads
+* Sped up new-workload SimPoint generation 200x by sampling CPU performance counters to generate [SimPoints](https://cseweb.ucsd.edu/~calder/simpoint/simpoint_overview.htm), avoiding simulation and instrumentation overheads.
+* Use differential privacy to enable trace-sharing across organizational boundaries without concern for leaking sensitive IP.
 
 **May 2022 - Aug 2022: NXP Semiconductors**
 
-* Developed semi-supervised learning-based ML algorithms, achieving an 85% accuracy rate in generalizing detectors to zero-day attacks.
+* Achieved 85% accuracy rate in generalizing detectors to zero-day attacks on edge hardware by training unsupervised ML algorithms.
+* Compared supervised and unsupervised algorithms for Spectre Side-Channe Detection, including VAEs, logistic regression, perceptrons, time-convolutional neural networks, decision trees, k-nearest neighbors, random forests, and support vector machines.
 * Collaborated closely with the VP of Edge Software in usability testing to streamline overhead levels, emphasizing optimum performance.
 
 
