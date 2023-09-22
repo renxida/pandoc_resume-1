@@ -3,7 +3,7 @@ Xida Ren
 
 ----
 
-> Full stack Maker with solid foundation in Systems, Machine Learning, Security, and Reliability
+> Autodidactic systems maestro adept at pinpointing leverage points for performance and security
 
 ----
 
@@ -24,7 +24,7 @@ Skills
 **Tools:**
 :   *Expertise in:* C++, Python, C, Zig, SQL, MatLab, Haskell
     *Familiar with:* Pandas, Numpy, TensorFlow, PyTorch, sklearn, Linux
-    
+
 **Specialities:**
 : CPU/GPU Performance, Machine Learning, Queuing Theory, Risk, Statistics
 
