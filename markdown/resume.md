@@ -3,7 +3,7 @@ Xida Ren
 
 ----
 
-> Expert in x86, RISC, Systems, Security, and Reliability. Fullstack / Cloud / Machine Learning Hobbiest
+Expert in x86, RISC, Systems, Security, and Reliability. Fullstack / Cloud / Machine Learning Hobbiest
 
 ----
 
@@ -24,7 +24,7 @@ Skills
 **Tools:**
 :   *Expertise in:* C++, Python, C, Zig, SQL, MatLab, Haskell
     *Familiar with:* Pandas, Numpy, TensorFlow, PyTorch, sklearn, Linux
-    
+
 **Specialities:**
 : CPU/GPU Performance, Machine Learning, Queuing Theory, Risk, Statistics
 
