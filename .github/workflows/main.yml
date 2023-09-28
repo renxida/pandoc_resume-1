@@ -16,7 +16,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        run: 'ls -al'
 
       - name: Build resume
         uses: docker://ghcr.io/mszep/pandoc_resume/resume_builder:latest
