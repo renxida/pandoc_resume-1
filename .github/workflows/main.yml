@@ -1,4 +1,9 @@
 
+name: Build and Upload Resume
+
+on:
+  push:
+  workflow_dispatch:
 jobs:
   build-resume:
     runs-on: ubuntu-latest
