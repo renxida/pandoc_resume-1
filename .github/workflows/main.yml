@@ -1,31 +1,29 @@
-
 name: Build and Upload Resume
 
 on:
   push:
   workflow_dispatch:
+
 jobs:
   build-resume:
     runs-on: ubuntu-latest
-#   services:
-#     buildhost:
-#       image: ghcr.io/mszep/pandoc_resume/resume_builder:latest
-#       credentials:
-#         username: ${{ github.actor }}
-#         password: ${{ secrets.GITHUB_TOKEN }}
-#       volumes:
-#         - ${{ github.workspace }}:${{ github.workspace }}
-#       ports:
-#         - 32001:22
+
+    container: # Use a container for running the job
+      image: ghcr.io/mszep/pandoc_resume/resume_builder:latest
+      volumes:
+        - ${{ github.workspace }}:/home/app/resume
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Build resume
-        uses: docker://ghcr.io/mszep/pandoc_resume/resume_builder:latest
-        with:
-          args: "-v ${{ github.workspace }}:/home/app/resume"
-
+        run: |
+          cd ${{ github.workspace }}
+          make
+          
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.3
+          with:
+            name: resume
+            path: ${{ github.workspace }}/path/to/resume # Specify the actual path to your resume file
