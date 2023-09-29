@@ -1,4 +1,4 @@
-name: Docker Compose Workflow
+name: Build Resume
 
 on:
   push:
@@ -24,3 +24,42 @@ jobs:
       with:
         name: output-artifact
         path: ./output/resume.pdf
+
+
+  release:
+    needs: docker-compose-job
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Calculate new version
+      run: |
+        git fetch --tags
+        DATE=$(date +'%Y%m%d%H%M%S')
+        LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null || echo "v0.0.0")
+        NEW_TAG="v$(echo $LATEST_TAG | awk -F. -v OFS=. '{$NF = $NF + 1;} 1')-$DATE"
+        echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
+
+    - name: Create git tag
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git tag ${{ env.NEW_TAG }}
+        git push origin ${{ env.NEW_TAG }}
+
+    - name: Download resume artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: output-artifact
+        path: ./artifacts
+
+    - name: Create GitHub Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        automatic_release_tag: "latest"
+        prerelease: false
+        title: "Release ${{ env.NEW_TAG }}"
+        files: ./artifacts/*.pdf
