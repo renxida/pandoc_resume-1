@@ -3,11 +3,8 @@ version: '2'
 services:
 
   resume-make:
-    build:
-      context: .
-      dockerfile: ./.docker/resume.dockerfile
     container_name: resume-make
     entrypoint: /entrypoint.sh
-    image: resume-make
+    image: ghcr.io/mszep/pandoc_resume:master
     volumes:
       - .:/home/app/resume:z
