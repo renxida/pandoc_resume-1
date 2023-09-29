@@ -1,3 +1,6 @@
+I apologize for the markdown syntax error. It looks like the indentation of the `container` section might be causing the issue. Try adjusting the indentation like this:
+
+```yaml
 name: Build and Upload Resume
 
 on:
@@ -8,7 +11,7 @@ jobs:
   build-resume:
     runs-on: ubuntu-latest
 
-    container: # Use a container for running the job
+    container:
       image: ghcr.io/mszep/pandoc_resume/resume_builder:latest
       volumes:
         - ${{ github.workspace }}:/home/app/resume
@@ -27,3 +30,6 @@ jobs:
           with:
             name: resume
             path: ${{ github.workspace }}/path/to/resume # Specify the actual path to your resume file
+```
+
+This should resolve the markdown syntax error, and the workflow should work as expected.
