@@ -1,29 +1,25 @@
-name: Build and Upload Resume
+name: Docker Compose Workflow
 
 on:
   push:
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  build-resume:
+  docker-compose-job:
     runs-on: ubuntu-latest
 
-    container:
-      image: ghcr.io/mszep/pandoc_resume/resume_builder:latest
-      volumes:
-        - ${{ github.workspace }}:/home/app/resume
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Build resume
-        run: |
-          cd ${{ github.workspace }}
-          make
-          
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.3
-        with:
-          name: resume
-          path: ${{ github.workspace }}/path/to/resume # Specify the actual path to your resume file
+    - name: Run Docker Compose Action
+      uses: isbang/compose-action@v1.5.1
+      with:
+        compose-file: "./docker-compose.yml"
+
+    - name: Archive output as artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: output-artifact
+        path: ./output/*
