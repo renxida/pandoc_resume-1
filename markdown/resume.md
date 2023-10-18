@@ -10,10 +10,10 @@ Expert in x86, RISC, Systems, Security, and Reliability. Fullstack / Cloud / Mac
 Education
 ---------
 
-2019 - 2023
-:   **PhD in Computer Architecture**; University of Virginia
+Aug 2019 - Dec 2024
+:   **Graduate Program of Computer Science**; University of Virginia
 
-    *GRE:* Verbal: 167, Quant: 168 / *GPA:* 4.0 / All but Thesis
+    *GRE:* Verbal: 167, Quant: 168 / *GPA:* 4.0 / Exiting PhD All-but-Thesis
 
 2016-2019
 :   **BSc, Computer Science and Mathematics**; College of William and Mary *3.8*
@@ -53,7 +53,7 @@ Experience
 * Designed system in close collaboration with the VP of Edge Software for usable tradeoffs between detection accuracy and performance.
 
 
-**Aug 2019-May 2023: UVA Computer Science Department, PhD Candidate (Exited All-But-Thesis)**
+**Aug 2019-May 2023: UVA Computer Science Department, PhD Candidate (Exiting All-But-Thesis)**
 
 * Unearthed two critical vulnerabilities in modern x86 processors, enhancing security and integrity, [published in ISCA 2021](https://ieeexplore.ieee.org/document/9499837)
 * Wrote LLVM / MLIR compiler passes for discovering vulnerabilities and optimizing / studying Machine Learning Models.
